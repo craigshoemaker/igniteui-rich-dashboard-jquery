@@ -1,12 +1,8 @@
 (function ($, window) {
 
-    var $linearGauges = null;
-
     var renderRows = function (data) {
 
-        $linearGauges = $linearGauges || $('.linear-gauge');
-
-        $linearGauges.each(function () {
+        $('.linear-gauge').each(function () {
 
             var gaugeContainer = $(this);
             var weekNumber = gaugeContainer.data('week-number');
