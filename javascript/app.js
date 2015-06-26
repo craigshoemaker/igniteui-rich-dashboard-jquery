@@ -1,5 +1,7 @@
 (function ($, window) {
 
+    'use strict';
+
     var columnDefinitions = [
       {
           headerText: 'Name',

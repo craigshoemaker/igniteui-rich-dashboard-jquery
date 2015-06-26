@@ -1,5 +1,7 @@
 (function (window) {
 
+    'use strict';
+
     var data = [
         { 
             fullName : "Tyler Martinez",

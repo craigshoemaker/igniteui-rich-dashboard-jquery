@@ -1,5 +1,7 @@
 (function ($, window) {
 
+    'use strict';
+
     var renderRows = function (data) {
 
         $('.linear-gauge').each(function () {
