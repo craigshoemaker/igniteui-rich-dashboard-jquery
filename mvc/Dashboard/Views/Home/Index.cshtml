@@ -4,9 +4,8 @@
 @model List<Employee>
 
 <script>
-    var rowsRendered = function () {
-        var $grid = $('#grid');
-        var dataSource = $grid.igGrid('option', 'dataSource').Records;
+    var rowsRendered = function (evt, ui) {
+        var dataSource = ui.owner.dataSource.data();
         app.grid.renderRows(dataSource);
     };
 </script>
