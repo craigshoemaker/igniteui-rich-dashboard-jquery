@@ -32,8 +32,6 @@
             columns: columnDefinitions,
             dataSource: window.app.data,
             autoGenerateColumns: false,
-            enableHoverStyles: false,
-            autofitLastColumn: false,
             rowsRendered: rowsRendered
         });
 
