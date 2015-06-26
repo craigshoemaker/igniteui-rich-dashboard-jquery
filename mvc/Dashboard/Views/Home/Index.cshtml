@@ -1,0 +1,36 @@
+﻿@using Infragistics.Web.Mvc
+@using Dashboard.Models
+
+@model List<Employee>
+
+<script>
+    var rowsRendered = function () {
+        var $grid = $('#grid');
+        var dataSource = $grid.igGrid('option', 'dataSource').Records;
+        app.grid.renderRows(dataSource);
+    };
+</script>
+
+@(Html.Infragistics()
+      .Grid(Model.AsQueryable())
+      .PrimaryKey("Id")
+      .ID("grid")
+      .Width("100%")
+      .EnableHoverStyles(false)
+      .AutofitLastColumn(false)
+      .AutoGenerateColumns(false)
+      .Columns(column => {
+          column.For(col => col.fullName).HeaderText("Full Name")
+                                         .DataType("string");
+          
+          column.For(col => col.hours).HeaderText("Week 1")
+                                      .DataType("string")
+                                      .Template(@"<div class=""linear-gauge"" data-week-number=""1""></div>");
+          
+          column.For(col => col.hours).HeaderText("Week 2")
+                                      .DataType("string")
+                                      .Template(@"<div class=""linear-gauge"" data-week-number=""2""></div>");
+      })
+      .AddClientEvent("rowsRendered", "rowsRendered")
+      .DataBind()
+      .Render())
