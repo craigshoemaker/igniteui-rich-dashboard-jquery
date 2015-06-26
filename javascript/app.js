@@ -28,7 +28,7 @@
 
         $('#grid').igGrid({
             width: '100%',
-            primaryKey: 'employeedID',
+            primaryKey: 'id',
             columns: columnDefinitions,
             dataSource: window.app.data,
             autoGenerateColumns: false,
