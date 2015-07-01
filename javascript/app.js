@@ -23,7 +23,7 @@
     ];
 
     var rowsRendered = function () {
-        app.grid.renderRows(app.data);
+        window.app.grid.renderRows(window.app.data);
     };
 
     $(function () {
