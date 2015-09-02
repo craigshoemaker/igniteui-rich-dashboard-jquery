@@ -7,8 +7,26 @@
         $('.linear-gauge').each(function () {
 
             var gaugeContainer = $(this);
+
+            // We try to get information from data attribute week-number
+            // If you this attribute doesn't exist we jump to next .linear-gauge
+            if (!gaugeContainer.data('week-number')) { 
+              console.log('Data attribute week-number is missing.');
+              
+              // Emergency exit
+              return;
+            }
             var weekNumber = gaugeContainer.data('week-number');
+            
+            // Try to convert week-number to Integer.
+            if (typeof weekNumber !== 'number') {
+              console.log('Data attribute week-number should to be a valid number.');
+              
+              // Emergency exit
+              return;
+            }
             var weekIndex = (parseInt(weekNumber) - 1);
+
             var rowIndex = gaugeContainer.closest('tr').index();
             var employeeData = data[rowIndex];
             var hrs = employeeData.hours[weekIndex];
